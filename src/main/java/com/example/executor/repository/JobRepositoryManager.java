@@ -1,6 +1,7 @@
 package com.example.executor.repository;
 
 import com.example.executor.repository.model.Job;
+import com.example.executor.task.controller.model.TaskDB;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,6 @@ public class JobRepositoryManager {
 
     public Long startJob(Job job) {
         var save = jobDB.save(job);
-
         return save.getId();
     }
 

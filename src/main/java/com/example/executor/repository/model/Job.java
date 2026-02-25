@@ -10,11 +10,12 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Task task;
     private Status status;
 }

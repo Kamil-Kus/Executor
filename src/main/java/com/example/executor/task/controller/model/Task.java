@@ -1,10 +1,7 @@
 package com.example.executor.task.controller.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,11 +10,12 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private TypeOfTask typeOfTask;
-    @OneToMany
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Device> deviceList;
 }

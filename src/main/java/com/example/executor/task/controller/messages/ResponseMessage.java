@@ -6,6 +6,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class ResponseMessage {
-    private String messsage;
+    private String message;
     private String jobId;
 }
